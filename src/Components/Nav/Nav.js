@@ -6,8 +6,11 @@ import { Route } from "react-router-dom";
 
 
 const Nav = (props) => {
-        let friendData = props.fiend;
-        // let friendsComponent
+        let friendData = props.friend;
+        let friendsTeg = friendData.map( (el) =>{
+            return <p> {el.name} </p>
+        });
+        
 
         return (  
         <nav className={styles.navWrapper}>
@@ -37,7 +40,7 @@ const Nav = (props) => {
                         <div className={styles.cycle}></div>
                     </div>
                     <div className={styles.friendWrapper}>
-                        {friendData}
+                        {friendsTeg}
                     </div>
 
                 </div>

@@ -3,7 +3,15 @@ import SendPostButton from "./SendPostButton/SendPostButton";
 import styles from "./style.module.css"
 
 
-const SendPosts = () =>{
+const SendPosts = (props) =>{
+    
+    let newPostValue = React.createRef();
+    
+    let clickForButton = () => {
+        let text = newPostValue.current;
+        console.log(props.addPost);
+       props.addPost(text.value)
+    }
     return(
         <div className={styles.postWrapper}>
             <div className={styles.secondPostWrapper}>
@@ -11,10 +19,10 @@ const SendPosts = () =>{
                     <p className={styles.headerText}>My Posts</p>
                 </div>
                 <div className={styles.contantWrapper} >
-                    <input className={styles.contantInput} ></input>
+                    <textarea className={styles.contantInput} placeholder="Enter your new post" ref={newPostValue} ></textarea>
                 </div>
                 <div className={styles.sendButtonWrapper}>
-                    <SendPostButton />
+                    <SendPostButton  click={clickForButton} />
                 </div>
             </div>
         </div>

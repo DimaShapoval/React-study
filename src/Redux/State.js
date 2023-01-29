@@ -1,14 +1,16 @@
+import { rerenderDOM } from "../render";
+
 let State = {
     profilePage: {
         
         posts: [
-            { content: "Hi lol", likesCount: 1 },
-            { content: "I am freedom", likesCount: 25 },
-            { content: "Dmytro I love you", likesCount: 34 },
-            { content: "I am a Front-end developer", likesCount: 1.2 + "m" },
-            { content: "I am a Front-end developer", likesCount: 1.2 + "m" },
-            { content: "I am a Front-end developer", likesCount: 1.2 + "m" },
-            { content: "I am a Front-end developer", likesCount: 1.2 + "m" },
+            { content: "Hi lol", likesCount: 1, id: 1 },
+            { content: "I am freedom", likesCount: 25, id: 2 },
+            { content: "Dmytro I love you", likesCount: 34, id: 3 },
+            { content: "I am a Front-end developer", likesCount: 1.2 + "m", id: 4 },
+            { content: "I am a Front-end developer", likesCount: 1.2 + "m", id: 5 },
+            { content: "I am a Front-end developer", likesCount: 1.2 + "m", id: 6 },
+            { content: "I am a Front-end developer", likesCount: 1.2 + "m", id: 7 },
         ]
     },
     messagePage: {
@@ -31,5 +33,16 @@ let State = {
         ]
     }
 }
+export let addPost = (postMessage)=>{
+    
+    let newPost = {
+        id: 8,
+        content: postMessage,
+        likesCount: 0,
+    };
+    State.profilePage.posts.push(newPost);
+    rerenderDOM(State);
+}
+
 
 export default State;
