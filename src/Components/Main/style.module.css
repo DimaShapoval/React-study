@@ -1,0 +1,31 @@
+.mainWrapper{
+    display: flex;
+    width: 1fr;
+    justify-content: center;
+    height: 100%;
+    
+    
+}
+
+.mainSecondWrapper{
+    width: 90%;
+    display: grid;
+    width: 1fr;
+    grid-template-areas: 
+    "n c c"
+    ;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 10px;
+}
+.nav{
+    grid-area: n;
+}
+.contentWrapper{
+    grid-area: c;
+    background-color: aquamarine;
+    border-radius: 15px;
+    height: auto;
+
+
+}
+

@@ -1,0 +1,24 @@
+.avatarWrapper{
+    grid-area: avatar;
+    width: 100%;
+}
+.avatarImage{
+    width: 50%;
+    border-radius: 100px;
+}
+.secondContentWrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-areas: 
+    "avatar content"
+
+    
+    ;
+}
+.rightContentWrapper{
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

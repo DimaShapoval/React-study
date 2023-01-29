@@ -1,0 +1,18 @@
+.dialogsWrapper{
+    display: grid;
+    grid-template-areas: "u m";
+    grid-template-columns:  30% 1fr;
+}
+.usersWrapper{
+    grid-area: u;
+}
+.messagesWrapper{
+    grid-area: m;
+}
+.userActive{
+    color: rgb(66, 185, 36);
+}
+.navLinks{
+    text-decoration: none;
+
+}

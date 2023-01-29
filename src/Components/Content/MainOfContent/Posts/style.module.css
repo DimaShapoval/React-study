@@ -1,0 +1,65 @@
+.postsWrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-areas:
+    "avatar post post" 
+    ;
+    margin-top: 50px;
+    /* background-color: black; */
+}
+.avatarWrapper{
+    grid-area: avatar;
+    display: flex;
+    /* align-items: flex-start; */
+    justify-content: center;
+    width: 100%;
+}
+.postContentWrapper{
+    grid-area: post;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+}
+.postContentScondWrapper{
+    width: 100%;
+}
+.postContent{
+    font-size: 23px;
+    font-weight: 600;
+    color: rgb(0, 92, 116);
+}
+.avata{
+    width: 70px;
+    border-radius: 100px;
+    margin-bottom: auto;
+}
+.likeWrapper{
+    display: flex;
+    grid-area: likes;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 20%;
+}
+.likes{
+    
+    width: 23px;
+    
+}
+.secondLikesWrapper{
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+}
+.likeCount{
+    color: rgb(0, 92, 116);
+    font-weight: 700;
+    margin: auto;
+}

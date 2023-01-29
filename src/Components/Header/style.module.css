@@ -1,0 +1,21 @@
+.headerWrapper{
+    color: brown;
+    width: 1fr;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    
+}
+.secondHeaderWrapper{
+    width: 90%;
+    background-color: aqua;
+    display: flex;
+    border-radius: 15px;
+    height: 100%;
+    align-items: center;
+
+}
+.headerImage{
+    width: 60px;
+    height: auto;
+}

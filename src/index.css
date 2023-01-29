@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:rgb(139, 180, 255);
+  height: auto;
+  /* background-image: url('https://www.freeiconspng.com/thumbs/white-star-icon/white-star-icon-10.png'); */
 }
 
 code {

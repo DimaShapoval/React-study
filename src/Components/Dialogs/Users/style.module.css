@@ -1,0 +1,12 @@
+.userName{
+    text-decoration: none;
+    color: rgb(0, 92, 116);
+    font-size: 18px;
+    font-weight: 600;
+}
+.userActive{
+    text-decoration: none;
+    color: rgb(66, 185, 36);
+    font-size: 22px;
+    font-weight: 500;
+}

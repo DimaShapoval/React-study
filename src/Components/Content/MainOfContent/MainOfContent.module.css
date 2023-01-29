@@ -1,0 +1,36 @@
+
+.contentWrapper{
+    width: 100%;
+    display: flex;
+}
+.secondContentWrapper{
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    "avatar avatar"
+    "sendpost sendpost"
+    "post post"
+    
+    ;
+}
+.avatarWrapper{
+    grid-area: avatar;
+    width: 100%;
+}
+
+.sendPostWrapper{
+    grid-area: sendpost;
+    margin-top: 30px;
+}
+.newPostWrapper{
+    grid-area: new;
+}
+.postsWrapper{
+    grid-area: post;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    margin-top: 55px;
+}

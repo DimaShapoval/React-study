@@ -1,5 +1,28 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas:
+  "header"
+  "main";
+  height: 100vh;
+  grid-gap: 20px;
+  
+}
+.header-wrapper{
+  grid-area: header;
+  
+  
+}
+
+.main-wrapper{
+  grid-area: main;
+}
+ul{
+  cursor: pointer;
+}
+ul  li{
+  font-style: italic;
 }
 
 .App-logo {
