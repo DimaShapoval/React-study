@@ -1,16 +1,23 @@
 import React from "react";
+import store, { addPostActionCreator, updateNewTextActionCreator } from "../../../../Redux/State";
 import SendPostButton from "./SendPostButton/SendPostButton";
-import styles from "./style.module.css"
+import styles  from "./style.module.css"
+
 
 
 const SendPosts = (props) =>{
     
-    let newPostValue = React.createRef();
-    
+    let newPostValue = React.createRef(); // create id like document.getElementById() for textarea
     let clickForButton = () => {
+        let text = newPostValue.current; //method current give us possibility to work with element how in vanilla js
+        let action = addPostActionCreator();
+       props.dispatch(action)
+    } // function that add post and rerender DOM
+    let onPostChange = ()=>{
         let text = newPostValue.current;
-        console.log(props.addPost);
-       props.addPost(text.value)
+        let action = updateNewTextActionCreator(text)
+        props.dispatch(action);
+        console.log(text.value);
     }
     return(
         <div className={styles.postWrapper}>
@@ -19,7 +26,8 @@ const SendPosts = (props) =>{
                     <p className={styles.headerText}>My Posts</p>
                 </div>
                 <div className={styles.contantWrapper} >
-                    <textarea className={styles.contantInput} placeholder="Enter your new post" ref={newPostValue} ></textarea>
+                    <textarea className={styles.contantInput} onChange={onPostChange} value={props.postValue}
+                     placeholder="Enter your new post" ref={newPostValue} />
                 </div>
                 <div className={styles.sendButtonWrapper}>
                     <SendPostButton  click={clickForButton} />

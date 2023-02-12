@@ -18,17 +18,11 @@ const Dialogs = (props) => {
     return (
         <div className={styles.dialogsWrapper}>
             <div className={styles.usersWrapper}>
-                {usersArray} {/* It is same that under of this array */}
-                {/* <Users to={dialogsData[0].id} name={dialogsData[0].name} />
-                    <Users to={dialogsData[1].id} name={dialogsData[1].name} />
-                    <Users to={dialogsData[2].id} name={dialogsData[2].name} /> */}
+                {usersArray} {/* it our tags, but like js array so we enter it in {} */}
             </div>
             <div className={styles.messagesWrapper} >
                     {messageArray}
-                {/* <Messages message={messageData[0].message} />
-                <Messages message={messageData[1].message} />
-                <Messages message={messageData[2].message} /> */}
-
+                
 
             </div>
         </div>

@@ -22,7 +22,7 @@ const Main = (props) => {
                 
                 <div className={styles.contentWrapper} >
                     <Routes>
-                        <Route path="/profile/*" element={<Content className={styles.content} addPost={props.addPost} post={props.post} />} />
+                        <Route path="/profile/*" element={<Content className={styles.content} dispatch={props.dispatch} postValue={props.postValue} post={props.post} />} />
                         <Route path="/dialogs/*" element={<Dialogs user={props.users} messages={props.messages}/>}  />
                         <Route path="/music/*" element={<Music/>} />
                         <Route path="/news/*" element={<News/>} />

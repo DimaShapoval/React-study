@@ -12,7 +12,7 @@ const Content = (props) => {
                     <img className={styles.mainImage} src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/cover-photo%2Cbackground%2C-technology-design-template-708b0881e40d33376afe161e5a38d9bc_screen.jpg?ts=1593459050" />
                 </div>
                 <div className={styles.mainOfContentWrapper}>
-                    <MainOfContent addPost={props.addPost} post={props.post} className={styles.firstRow} />
+                    <MainOfContent dispatch={props.dispatch} postValue={props.postValue} post={props.post} className={styles.firstRow} />
                 </div>
             </div>
         </div>
