@@ -1,7 +1,14 @@
-.dialogsWrapper{
+.secondDialogsWrapper{
     display: grid;
+    grid-area: "h";
     grid-template-areas: "u m";
     grid-template-columns:  30% 1fr;
+}
+.dialogsWrapper{
+    display: grid;
+    height: 100%;
+    grid-template-areas: "h" "m";
+    grid-template-rows: 85% 1fr;
 }
 .usersWrapper{
     grid-area: u;
@@ -15,4 +22,7 @@
 .navLinks{
     text-decoration: none;
 
+}
+.textareaWrapper{
+    grid-area: "m";
 }

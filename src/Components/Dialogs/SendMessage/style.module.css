@@ -1,0 +1,41 @@
+textarea{
+    resize: none;
+    background-color:rgb(130, 216, 216);
+    color: rgb(0, 92, 116);
+    resize: none;
+    align-items: center;
+    text-indent: 5px;
+    padding-right: 2%;
+    padding-left: 2%;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    height: 60px;
+    box-shadow: 5px 5px 23px 0px rgb(0, 92, 116);
+    width: 60%;
+    border-radius: 10px;
+}
+.selectUser{
+    border: none;
+    width: 10%;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: rgb(130, 216, 216);
+    color: rgb(0, 92, 116);
+    cursor: pointer;
+    text-align: center;
+}
+.sendWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sendButtonWrapper{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}

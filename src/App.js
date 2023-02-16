@@ -12,7 +12,7 @@ function App(props) {
       </header>
       <main>
         <Main dispatch={props.dispatch} 
-        
+        messageValue={props.appState.messagePage.messageInputValue}
         postValue={props.appState.profilePage.newPostText}
         post={props.appState.profilePage.posts} 
         users={props.appState.messagePage.dialogs} messages={props.appState.messagePage.message} friend={props.appState.navBar.friend} className="main-wrapper" />

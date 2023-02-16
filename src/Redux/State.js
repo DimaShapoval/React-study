@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_TEXT = 'UPDATE-NEW-TEXT'
+const UPDATE_TEXT_MESSAGE = "UPDATE-TEXT-MESSAGE"
+const ADD_MESSAGE = "ADD-MESSAGE"
 
 let store = {
     _rerenderDOM() {
@@ -34,6 +36,7 @@ let store = {
                 { id: 3, message: "Are you here?" },
             ]
         },
+        messageInputValue: "",
         navBar: {
             friend: [
                 { id: 1, name: "Igor" },
@@ -71,7 +74,26 @@ let store = {
             this._State.profilePage.newPostText = action.newValue;
             this._rerenderDOM(this.getState());
         }
+        else if(action.type === UPDATE_TEXT_MESSAGE){
+            this._State.messagePage.messageInputValue = action.newInputValue;
+            this._rerenderDOM(this.getState());
+        }
+        else if(action.type === ADD_MESSAGE){
+            console.log(action.newName);
+            let newDialog = {
+                id: this._State.messagePage.dialogs.id + 1,
+                // name: action.newName
+            }
+            let newMessage = {
+                id: this._State.messagePage.message.id + 1,
+                message: action.message
+            }
+            this._State.messagePage.dialogs.push(newDialog)
+            this._State.messagePage.message.push(newMessage);
+            this._State.messageInputValue = ""
+            this._rerenderDOM(this.getState());
 
+        }
     }
 
 
@@ -87,6 +109,20 @@ export let updateNewTextActionCreator = (elem) =>{
     return{
         type: UPDATE_TEXT,
         newValue: elem.value,  
+    }
+}
+export let onMessageInputChangeActionCreator = (elem) =>{
+    return{
+        type: UPDATE_TEXT_MESSAGE,
+        newInputValue: elem.value
+    }
+}
+export let addMessageActionCreator = (input, select) =>{
+    return{
+        type: ADD_MESSAGE,
+        message: input.value,
+        newName: select.textContent
+
     }
 }
 
