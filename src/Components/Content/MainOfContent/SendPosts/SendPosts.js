@@ -1,5 +1,5 @@
 import React from "react";
-import store, { addPostActionCreator, updateNewTextActionCreator } from "../../../../Redux/State";
+import { addPostActionCreator, updateNewTextActionCreator } from "../../../../Redux/profile-reduser";
 import SendPostButton from "./SendPostButton/SendPostButton";
 import styles  from "./style.module.css"
 

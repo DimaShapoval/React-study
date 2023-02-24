@@ -16,9 +16,7 @@ const Main = (props) => {
     return "/dialogs/" + user.id
    })
 
-console.log(dialogPath);
     return (
-        <BrowserRouter>
         <div className={styles.mainWrapper}>
             <div className={styles.mainSecondWrapper}>
                 
@@ -43,7 +41,6 @@ console.log(dialogPath);
 
             </div>
         </div>
-        </BrowserRouter>
     )
 }
 

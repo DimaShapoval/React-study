@@ -33,7 +33,7 @@ const Dialogs = (props) => {
             <div className={styles.textareaWrapper}>
                 <SendMessage dispatch={props.dispatch} messageValue={props.messageValue} users={props.user}/>
             </div>
-            
+           
         </div>
     )
 }

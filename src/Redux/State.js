@@ -1,3 +1,6 @@
+import messageReducer from "./message-reducer"
+import profileReducer from "./profile-reduser"
+
 const ADD_POST = 'ADD-POST'
 const UPDATE_TEXT = 'UPDATE-NEW-TEXT'
 const UPDATE_TEXT_MESSAGE = "UPDATE-TEXT-MESSAGE"
@@ -34,9 +37,10 @@ let store = {
                 { id: 1, message: "Hi" },
                 { id: 2, message: "How are you?" },
                 { id: 3, message: "Are you here?" },
-            ]
+            ],
+            messageInputValue: "",
         },
-        messageInputValue: "",
+     
         navBar: {
             friend: [
                 { id: 1, name: "Igor" },
@@ -58,73 +62,15 @@ let store = {
 
     // },
     dispatch(action) { //important to have { type: (type of info) exapmle: "TEXT"}
-        if (action.type === ADD_POST) {
-            //function that add post and rerender DOM 
-
-            let newPost = { // object that we push in our this.State
-                id: 8,
-                content: this._State.profilePage.newPostText,
-                likesCount: 0,
-            };
-            this._State.profilePage.posts.push(newPost);
-            this._State.profilePage.newPostText = "" // after click button our textarea has in value none
-            this._rerenderDOM(this.getState()); // function that in render.js for rerender DOM
-        }
-        else if (action.type === UPDATE_TEXT) {
-            this._State.profilePage.newPostText = action.newValue;
-            this._rerenderDOM(this.getState());
-        }
-        else if(action.type === UPDATE_TEXT_MESSAGE){
-            this._State.messagePage.messageInputValue = action.newInputValue;
-            this._rerenderDOM(this.getState());
-        }
-        else if(action.type === ADD_MESSAGE){
-            console.log(action.newName);
-            let newDialog = {
-                id: this._State.messagePage.dialogs.id + 1,
-                // name: action.newName
-            }
-            let newMessage = {
-                id: this._State.messagePage.message.id + 1,
-                message: action.message
-            }
-            this._State.messagePage.dialogs.push(newDialog)
-            this._State.messagePage.message.push(newMessage);
-            this._State.messageInputValue = ""
-            this._rerenderDOM(this.getState());
-
-        }
+        // this._State.profilePage = profileReducer(this._State.profilePage, action)
+        // this._State.messagePage = messageReducer(this._State.messagePage, action)
+        // this._rerenderDOM(this.getState())
     }
 
 
 
 }
-export let addPostActionCreator = () => {
-    return {
-        type: ADD_POST,
 
-    }
-}
-export let updateNewTextActionCreator = (elem) =>{
-    return{
-        type: UPDATE_TEXT,
-        newValue: elem.value,  
-    }
-}
-export let onMessageInputChangeActionCreator = (elem) =>{
-    return{
-        type: UPDATE_TEXT_MESSAGE,
-        newInputValue: elem.value
-    }
-}
-export let addMessageActionCreator = (input, select) =>{
-    return{
-        type: ADD_MESSAGE,
-        message: input.value,
-        newName: select.textContent
-
-    }
-}
 
 
 

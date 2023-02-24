@@ -1,5 +1,5 @@
 import React from "react";
-import {  addMessageActionCreator, onMessageInputChangeActionCreator } from "../../../Redux/State";
+import { addMessageActionCreator, onMessageInputChangeActionCreator } from "../../../Redux/message-reducer";
 import SendMessageButton from "./SendMessageButton/SendMessageButton";
 import styles from "./style.module.css"
 
@@ -10,15 +10,13 @@ const SendMessage = (props) =>{
     let newUsers = props.users.map((elem)=>{
         return <option>{elem.name}</option>
     })
-    let onInputChange = () =>{
-        let text = newValueOfTextArea.current
+    let onInputChange = (event) =>{
+        let text = event.target
         let action = onMessageInputChangeActionCreator(text)
         props.dispatch(action);
     }
     let addMessage = () =>{
-        let text = newValueOfTextArea.current
-        let select = selectOfFriend.current
-        let action = addMessageActionCreator(text, select)
+        let action = addMessageActionCreator()
         props.dispatch(action)
     }
     return(
@@ -26,7 +24,7 @@ const SendMessage = (props) =>{
             <select className={styles.selectUser} ref={selectOfFriend}>
                 {newUsers}
             </select>
-             <textarea onChange={onInputChange} ref={newValueOfTextArea}>{props.messageValue}</textarea>
+             <textarea onChange={onInputChange} ref={newValueOfTextArea} placeholder="Enter your message" value={props.messageValue}/>
              <div className={styles.sendButtonWrapper}>
                 <SendMessageButton click={addMessage}/>
              </div>
