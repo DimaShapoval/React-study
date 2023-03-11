@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import store from './Redux/redux-store';
+import StoreContext from './StoreContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,9 +13,11 @@ let rerenderDOM = (state) => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
+      <StoreContext.Provider value={store}>
         <App appState={state} dispatch={store.dispatch.bind(store)} /> {/* store.dispatch.bind(store)
         bind it function that take information only in obj that we write in () we bind store
         it's say that in our functions argument (this) it is store */}
+        </StoreContext.Provider>
       </BrowserRouter>
     </React.StrictMode>
   );

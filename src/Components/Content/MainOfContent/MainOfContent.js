@@ -18,7 +18,7 @@ const MainOfContent = (props) =>{
             <div className={styles.secondContentWrapper} >
                 <ProfileInfo className={styles.avatarWrapper}/>
                 <div className={styles.sendPostWrapper}>
-                    <SendPostsContainer  postValue={props.postValue} dispatch={props.dispatch}/>
+                    <SendPostsContainer  postValue={props.postValue} />
                 </div>
                 {/* <div className={styles.newPostWrapper}>
                     <p>New Post</p>
