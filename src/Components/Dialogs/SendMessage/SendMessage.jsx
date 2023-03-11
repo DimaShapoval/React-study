@@ -5,15 +5,14 @@ import styles from "./style.module.css"
 
 
 const SendMessage = (props) =>{
-    let newValueOfTextArea = React.createRef()
-    let selectOfFriend = React.createRef();
+    // let newValueOfTextArea = React.createRef()
+    // let selectOfFriend = React.createRef();
     let newUsers = props.users.map((elem)=>{
         return <option>{elem.name}</option>
     })
     let onInputChange = (event) =>{
         let text = event.target
-        let action = onMessageInputChangeActionCreator(text)
-        props.dispatch(action);
+        props.onInputChange(text)
     }
     let addMessage = () =>{
         let action = addMessageActionCreator()
@@ -21,12 +20,12 @@ const SendMessage = (props) =>{
     }
     return(
         <div className={styles.sendWrapper}>
-            <select className={styles.selectUser} ref={selectOfFriend}>
+            <select className={styles.selectUser} >
                 {newUsers}
             </select>
-             <textarea onChange={onInputChange} ref={newValueOfTextArea} placeholder="Enter your message" value={props.messageValue}/>
+             <textarea onChange={onInputChange} placeholder="Enter your message" value={props.messageValue}/>
              <div className={styles.sendButtonWrapper}>
-                <SendMessageButton click={addMessage}/>
+                <SendMessageButton click={props.onAddMessage}/>
              </div>
         </div>
     )

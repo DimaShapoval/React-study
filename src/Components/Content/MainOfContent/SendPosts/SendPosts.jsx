@@ -8,16 +8,13 @@ import styles  from "./style.module.css"
 const SendPosts = (props) =>{
     
     let newPostValue = React.createRef(); // create id like document.getElementById() for textarea
-    let clickForButton = () => {
-        let text = newPostValue.current; //method current give us possibility to work with element how in vanilla js
-        let action = addPostActionCreator();
-       props.dispatch(action)
-    } // function that add post and rerender DOM
-    let onPostChange = ()=>{
-        let text = newPostValue.current;
-        let action = updateNewTextActionCreator(text)
-        props.dispatch(action);
-        console.log(text.value);
+    // let onClickForButton = () => {
+    //     let text = newPostValue.current; //method current give us possibility to work with element how in vanilla js
+    //     let action = addPostActionCreator();
+    // } // function that add post and rerender DOM
+    let onPostChange = (event)=>{
+        let text = event.target;
+        props.updateNewText(text)
     }
     return(
         <div className={styles.postWrapper}>
@@ -30,7 +27,7 @@ const SendPosts = (props) =>{
                      placeholder="Enter your new post" ref={newPostValue} />
                 </div>
                 <div className={styles.sendButtonWrapper}>
-                    <SendPostButton  click={clickForButton} />
+                    <SendPostButton  click={props.onAddPost} />
                 </div>
             </div>
         </div>

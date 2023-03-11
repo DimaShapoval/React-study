@@ -12,13 +12,15 @@ let rerenderDOM = (state) => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App appState={state} dispatch={store.dispatch.bind(store)} />
+        <App appState={state} dispatch={store.dispatch.bind(store)} /> {/* store.dispatch.bind(store)
+        bind it function that take information only in obj that we write in () we bind store
+        it's say that in our functions argument (this) it is store */}
       </BrowserRouter>
     </React.StrictMode>
   );
 };
 rerenderDOM(store.getState());
-store.subscribe(() => {
+store.subscribe(() => { //function that rerender our DOM
   let state = store.getState()
   rerenderDOM(state)
 });

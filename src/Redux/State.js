@@ -5,7 +5,8 @@ const ADD_POST = 'ADD-POST'
 const UPDATE_TEXT = 'UPDATE-NEW-TEXT'
 const UPDATE_TEXT_MESSAGE = "UPDATE-TEXT-MESSAGE"
 const ADD_MESSAGE = "ADD-MESSAGE"
-
+//It's previous file with store, that create to understand what in redux-store.js Our store we take only from redux-store
+// Don't use this file for work with store
 let store = {
     _rerenderDOM() {
         console.log("State is changed");
@@ -56,15 +57,10 @@ let store = {
         this._rerenderDOM = observer; // observer this is our observer translate like наблюдадеть or it is pattern
 
     },
-    // addPost() {
-    // },
-    // changeValue(newValue) { //function that change value in texarea when it change like one letter
-
-    // },
     dispatch(action) { //important to have { type: (type of info) exapmle: "TEXT"}
-        // this._State.profilePage = profileReducer(this._State.profilePage, action)
-        // this._State.messagePage = messageReducer(this._State.messagePage, action)
-        // this._rerenderDOM(this.getState())
+        this._State.profilePage = profileReducer(this._State.profilePage, action)
+        this._State.messagePage = messageReducer(this._State.messagePage, action)
+        this._rerenderDOM(this.getState())
     }
 
 

@@ -3,6 +3,7 @@ import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import MessagePage from "../MessagePage/MessagePage";
 import Messages from "./Messages/Messages";
 import SendMessage from "./SendMessage/SendMessage";
+import SendMessageContainer from "./SendMessage/SendMessageContainer";
 import styles from "./style.module.css"
 import Users from "./Users/Users";
 
@@ -31,7 +32,7 @@ const Dialogs = (props) => {
             </div>
             </div> 
             <div className={styles.textareaWrapper}>
-                <SendMessage dispatch={props.dispatch} messageValue={props.messageValue} users={props.user}/>
+                <SendMessageContainer dispatch={props.dispatch} messageValue={props.messageValue} users={props.user}/>
             </div>
            
         </div>

@@ -3,6 +3,7 @@ import styles from "./MainOfContent.module.css"
 import Posts from "./Posts/Posts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import SendPosts from "./SendPosts/SendPosts";
+import SendPostsContainer from "./SendPosts/SendPostsContainer";
 
 
 const MainOfContent = (props) =>{
@@ -17,7 +18,7 @@ const MainOfContent = (props) =>{
             <div className={styles.secondContentWrapper} >
                 <ProfileInfo className={styles.avatarWrapper}/>
                 <div className={styles.sendPostWrapper}>
-                    <SendPosts  postValue={props.postValue} dispatch={props.dispatch}/>
+                    <SendPostsContainer  postValue={props.postValue} dispatch={props.dispatch}/>
                 </div>
                 {/* <div className={styles.newPostWrapper}>
                     <p>New Post</p>
